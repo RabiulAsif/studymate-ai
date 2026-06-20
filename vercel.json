@@ -1,0 +1,14 @@
+{
+  "experimentalServices": {
+    "backend": {
+      "root": "backend",
+      "routePrefix": "/_/backend",
+      "framework": "fastapi"
+    },
+    "frontend": {
+      "root": "frontend",
+      "routePrefix": "/",
+      "framework": "vite"
+    }
+  }
+}
