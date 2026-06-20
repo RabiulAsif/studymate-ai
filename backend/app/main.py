@@ -39,7 +39,11 @@ app.add_middleware(
 app.include_router(chat_router)
 
 # Create uploads directory
-UPLOADS_DIR = os.path.join(os.path.dirname(__file__), "uploads")
+# Use /tmp on Vercel (read-only filesystem), local uploads folder otherwise
+if os.environ.get("VERCEL"):
+    UPLOADS_DIR = "/tmp/uploads"
+else:
+    UPLOADS_DIR = os.path.join(os.path.dirname(__file__), "uploads")
 os.makedirs(UPLOADS_DIR, exist_ok=True)
 
 
