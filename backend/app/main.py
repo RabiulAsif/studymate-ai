@@ -16,7 +16,7 @@ from app.database import (
 
 app = FastAPI()
 
-# CORS configuration
+# CORS configuration - Allow frontend and local development
 origins = [
     "http://localhost:5173",
     "http://localhost:3000",
@@ -24,7 +24,9 @@ origins = [
     "http://127.0.0.1:3000",
     "https://studymate-ai-xi.vercel.app",
     "https://studymate-ai-frontend.vercel.app",
+    "https://studymate-ai-frontend-mu.vercel.app",
     "https://*.vercel.app",
+    "https://*.onrender.com",
 ]
 
 app.add_middleware(
@@ -38,12 +40,12 @@ app.add_middleware(
 # Include routes
 app.include_router(chat_router)
 
-# Create uploads directory
-# Use /tmp on Vercel (read-only filesystem), local uploads folder otherwise
+# Create uploads directory - Use /tmp on Vercel, local folder otherwise
 if os.environ.get("VERCEL"):
     UPLOADS_DIR = "/tmp/uploads"
 else:
     UPLOADS_DIR = os.path.join(os.path.dirname(__file__), "uploads")
+
 os.makedirs(UPLOADS_DIR, exist_ok=True)
 
 
@@ -76,7 +78,7 @@ def health():
     """Health check endpoint"""
     return {
         "status": "healthy",
-        "version": "3.3.0"
+        "version": "3.4.0"
     }
 
 
@@ -372,6 +374,6 @@ def root():
     return {
         "message": "StudyMate AI API",
         "status": "running",
-        "version": "3.3.0",
+        "version": "3.4.0",
         "note": "All endpoints require user_id for data separation"
     }
