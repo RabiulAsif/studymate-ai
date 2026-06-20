@@ -22,7 +22,9 @@ origins = [
     "http://localhost:3000",
     "http://127.0.0.1:5173",
     "http://127.0.0.1:3000",
-    "https://studymate-ai.vercel.app",
+    "https://studymate-ai-xi.vercel.app",
+    "https://studymate-ai-frontend.vercel.app",
+    "https://*.vercel.app",
 ]
 
 app.add_middleware(
@@ -70,7 +72,7 @@ def health():
     """Health check endpoint"""
     return {
         "status": "healthy",
-        "version": "3.2.0"
+        "version": "3.3.0"
     }
 
 
@@ -366,6 +368,6 @@ def root():
     return {
         "message": "StudyMate AI API",
         "status": "running",
-        "version": "3.2.0",
+        "version": "3.3.0",
         "note": "All endpoints require user_id for data separation"
     }

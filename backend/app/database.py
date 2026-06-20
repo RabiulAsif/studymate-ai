@@ -11,21 +11,24 @@ load_dotenv()
 
 MONGODB_URL = os.getenv("MONGODB_URL")
 
-if not MONGODB_URL:
-    raise ValueError("MONGODB_URL not found in .env file")
+# Initialize db as None
+db = None
 
 try:
-    # Create MongoDB client
-    client = MongoClient(MONGODB_URL, serverSelectionTimeoutMS=5000)
-    
-    # Test connection
-    client.admin.command('ping')
-    
-    # Get database
-    db = client.get_database()
-    
-    print("✅ Connected to MongoDB successfully!")
-    
+    if MONGODB_URL:
+        # Create MongoDB client
+        client = MongoClient(MONGODB_URL, serverSelectionTimeoutMS=5000)
+        
+        # Test connection
+        client.admin.command('ping')
+        
+        # Get database
+        db = client.get_database()
+        
+        print("✅ Connected to MongoDB successfully!")
+    else:
+        print("⚠️ MONGODB_URL not set - database operations will fail")
+        
 except ServerSelectionTimeoutError:
     print("❌ Could not connect to MongoDB. Check your connection string.")
     db = None
@@ -37,16 +40,22 @@ except Exception as e:
 # Collections
 def get_chats_collection():
     """Get chats collection"""
+    if db is None:
+        raise RuntimeError("Database not connected")
     return db["chats"]
 
 
 def get_pdfs_collection():
     """Get PDFs collection"""
+    if db is None:
+        raise RuntimeError("Database not connected")
     return db["pdfs"]
 
 
 def get_users_collection():
     """Get users collection"""
+    if db is None:
+        raise RuntimeError("Database not connected")
     return db["users"]
 
 
