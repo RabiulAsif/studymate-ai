@@ -479,27 +479,84 @@ textarea::placeholder {
   background: rgba(102, 126, 234, 0.6);
 }
 
-/* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 250px;
-    padding: 15px;
-  }
+/* ========== RESPONSIVE DESIGN ========== */
 
-  .message-content {
-    max-width: 85%;
+/* Tablet (769px - 1024px) */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 280px;
+    padding: 18px;
   }
 
   .chat-header {
-    padding: 15px 20px;
+    padding: 18px 24px;
   }
 
   .chat-box {
-    padding: 15px 20px;
+    padding: 18px 24px;
+  }
+
+  .input-container {
+    padding: 14px 24px 20px 24px;
+  }
+
+  .message-content {
+    max-width: 80%;
+  }
+}
+
+/* Tablet Portrait (769px - 900px) */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 260px;
+    padding: 16px;
+  }
+
+  .sidebar-header h1 {
+    font-size: 20px;
+  }
+
+  .new-chat-btn {
+    padding: 11px 14px;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .chat-item {
+    padding: 10px 12px;
+    margin: 5px 0;
+    font-size: 12px;
+  }
+
+  .message-content {
+    max-width: 82%;
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  .chat-header {
+    padding: 16px 20px;
+  }
+
+  .chat-header p {
+    font-size: 13px;
+  }
+
+  .chat-box {
+    padding: 16px 20px;
   }
 
   .input-container {
     padding: 12px 20px 16px 20px;
+  }
+
+  textarea {
+    font-size: 13px;
+  }
+
+  .send-btn {
+    padding: 7px 16px;
+    font-size: 12px;
   }
 
   .app-footer {
@@ -509,7 +566,8 @@ textarea::placeholder {
   }
 }
 
-@media (max-width: 600px) {
+/* Medium phones (601px - 768px) */
+@media (max-width: 768px) {
   .app-container {
     flex-direction: column;
   }
@@ -518,26 +576,371 @@ textarea::placeholder {
     width: 100%;
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    max-height: 150px;
-    overflow-x: auto;
+    max-height: 140px;
+    padding: 12px 16px;
     flex-direction: row;
+    align-items: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .sidebar-header {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    min-width: 120px;
+    padding-right: 16px;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .sidebar-header h1 {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+
+  .sidebar-header p {
+    font-size: 10px;
+  }
+
+  .new-chat-btn {
+    display: none;
   }
 
   .chat-history {
-    margin-bottom: 0;
-    margin-right: 20px;
     flex: 1;
+    margin-bottom: 0;
+    margin-right: 16px;
     display: flex;
-    gap: 10px;
+    gap: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-direction: row;
+  }
+
+  .chat-item {
+    margin: 0;
+    padding: 8px 12px;
+    font-size: 11px;
+    min-width: 100px;
+    flex-shrink: 0;
+  }
+
+  .pdf-section {
+    display: none;
+  }
+
+  .main-content {
+    height: calc(100vh - 140px);
+  }
+
+  .chat-header {
+    padding: 14px 16px;
+  }
+
+  .chat-header p {
+    font-size: 12px;
+    margin: 2px 0;
+  }
+
+  .chat-box {
+    padding: 12px 16px;
+    gap: 6px;
+  }
+
+  .message-content {
+    max-width: 88%;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .welcome-section h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .welcome-section p {
+    font-size: 13px;
+    margin: 6px 0;
+  }
+
+  .input-container {
+    padding: 10px 16px 14px 16px;
+  }
+
+  .input-box {
+    padding: 6px 10px;
+    gap: 8px;
+  }
+
+  textarea {
+    font-size: 13px;
+    min-height: 32px;
+    padding: 4px 3px;
+  }
+
+  .send-btn {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+
+  .app-footer {
+    right: 16px;
+    bottom: 10px;
+    font-size: 10px;
+  }
+}
+
+/* Small phones (481px - 600px) */
+@media (max-width: 600px) {
+  .sidebar {
+    max-height: 120px;
+    padding: 10px 12px;
+  }
+
+  .sidebar-header {
+    min-width: 100px;
+    padding-right: 12px;
+  }
+
+  .sidebar-header h1 {
+    font-size: 16px;
+    margin-bottom: 1px;
+  }
+
+  .sidebar-header p {
+    font-size: 9px;
+  }
+
+  .chat-history {
+    margin-right: 12px;
+    gap: 6px;
+  }
+
+  .chat-item {
+    padding: 6px 10px;
+    font-size: 10px;
+    min-width: 90px;
+  }
+
+  .main-content {
+    height: calc(100vh - 120px);
+  }
+
+  .chat-header {
+    padding: 12px 14px;
+  }
+
+  .chat-header p {
+    font-size: 11px;
+  }
+
+  .chat-box {
+    padding: 10px 14px;
   }
 
   .message-content {
     max-width: 90%;
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .welcome-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .welcome-section p {
+    font-size: 12px;
+  }
+
+  .input-container {
+    padding: 8px 12px 12px 12px;
+  }
+
+  .input-box {
+    padding: 5px 8px;
+  }
+
+  textarea {
+    font-size: 12px;
+    min-height: 30px;
+  }
+
+  .send-btn {
+    padding: 5px 12px;
+    font-size: 11px;
   }
 
   .app-footer {
-    right: 15px;
-    bottom: 10px;
+    right: 12px;
+    bottom: 8px;
+    font-size: 9px;
+  }
+}
+
+/* Extra small phones (320px - 480px) */
+@media (max-width: 480px) {
+  .sidebar {
+    max-height: 100px;
+    padding: 8px 10px;
+  }
+
+  .sidebar-header {
+    min-width: 80px;
+    padding-right: 10px;
+  }
+
+  .sidebar-header h1 {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .sidebar-header p {
+    font-size: 8px;
+  }
+
+  .chat-history {
+    margin-right: 10px;
+    gap: 4px;
+  }
+
+  .chat-item {
+    padding: 5px 8px;
+    font-size: 9px;
+    min-width: 80px;
+  }
+
+  .main-content {
+    height: calc(100vh - 100px);
+  }
+
+  .chat-header {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .chat-header p {
     font-size: 10px;
+    margin: 1px 0;
+  }
+
+  .pdf-info {
+    font-size: 10px;
+    margin-top: 4px;
+  }
+
+  .chat-box {
+    padding: 8px 12px;
+    gap: 4px;
+  }
+
+  .message-content {
+    max-width: 92%;
+    padding: 6px 8px;
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+  .welcome-section {
+    padding: 0 12px;
+  }
+
+  .welcome-section h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .welcome-section p {
+    font-size: 11px;
+    margin: 4px 0;
+  }
+
+  .input-container {
+    padding: 6px 10px 10px 10px;
+  }
+
+  .input-box {
+    padding: 4px 6px;
+    gap: 6px;
+    border-radius: 8px;
+  }
+
+  textarea {
+    font-size: 11px;
+    min-height: 28px;
+    padding: 3px 2px;
+  }
+
+  textarea::placeholder {
+    font-size: 10px;
+  }
+
+  .send-btn {
+    padding: 4px 10px;
+    font-size: 10px;
+    border-radius: 5px;
+  }
+
+  .app-footer {
+    right: 10px;
+    bottom: 6px;
+    font-size: 8px;
+  }
+}
+
+/* Landscape orientation (height < 600px) */
+@media (max-height: 600px) and (max-width: 900px) {
+  .sidebar {
+    max-height: 80px;
+    padding: 8px;
+  }
+
+  .chat-history {
+    gap: 4px;
+  }
+
+  .chat-item {
+    padding: 6px 10px;
+    margin: 0;
+  }
+
+  .main-content {
+    height: calc(100vh - 80px);
+  }
+
+  .chat-header {
+    padding: 8px 12px;
+  }
+
+  .chat-header p {
+    font-size: 10px;
+    margin: 0;
+  }
+
+  .chat-box {
+    padding: 8px 12px;
+  }
+
+  .message {
+    margin: 4px 0;
+  }
+
+  .message-content {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .input-container {
+    padding: 6px 12px 8px 12px;
+  }
+
+  textarea {
+    min-height: 28px;
+    font-size: 12px;
+  }
+
+  .send-btn {
+    padding: 5px 12px;
+    font-size: 11px;
   }
 }
