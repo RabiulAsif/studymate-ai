@@ -81,8 +81,8 @@ async def chat(data: dict):
                 "reply": "I'm specifically designed to help with study questions. Please ask me something related to academics, subjects, or learning!"
             }
 
-        # Get AI response
-        ai_response = await get_ai_response(message, history, user_id, session_id)
+        # Get AI response - FIXED: Only pass message and history
+        ai_response = get_ai_response(message, history)
 
         # Save chat to database
         save_chat(user_id, session_id, message, ai_response)
