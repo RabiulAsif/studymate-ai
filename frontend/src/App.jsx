@@ -25,7 +25,7 @@ function App() {
   const textareaRef = useRef(null);
 
   // API URL
-  const API_URL = "http://127.0.0.1:8000";
+  const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 
   // ========== INITIALIZE USER ID ON MOUNT ==========
   useEffect(() => {
