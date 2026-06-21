@@ -368,7 +368,7 @@ def remove_pdf(session_id: str, filename: str, user_id: str = Query(...)):
 
 
 # ========== ROOT ==========
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 def root():
     """Root endpoint"""
     return {
