@@ -498,7 +498,7 @@ textarea::placeholder {
   background: rgba(102, 126, 234, 0.6);
 }
 
-/* ========== MOBILE RESPONSIVE ========== */
+/* ========== MOBILE RESPONSIVE - KEEP SIDEBAR ON LEFT ========== */
 
 /* Tablets (768px - 1024px) */
 @media (max-width: 1024px) {
@@ -544,32 +544,20 @@ textarea::placeholder {
   }
 }
 
-/* Small tablets & large phones (600px - 768px) */
+/* Tablets & Large Phones (600px - 768px) - KEEP SIDEBAR ON LEFT */
 @media (max-width: 768px) {
-  .app-container {
-    flex-direction: column;
-  }
-
   .sidebar {
-    width: 100%;
-    max-height: 35vh;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 12px 16px;
-    flex-direction: row;
+    width: 220px;
+    padding: 14px;
   }
 
   .sidebar-header {
-    margin-bottom: 0;
-    border-bottom: none;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 0 16px 0 0;
-    margin-right: 16px;
-    min-width: 120px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
   }
 
   .sidebar-header h1 {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 2px;
   }
 
@@ -578,32 +566,24 @@ textarea::placeholder {
   }
 
   .new-chat-btn {
-    display: none;
+    padding: 10px 12px;
+    font-size: 12px;
+    margin-bottom: 14px;
   }
 
   .chat-history {
-    flex: 1;
-    margin-bottom: 0;
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    flex-direction: row;
+    margin-bottom: 14px;
   }
 
   .chat-item {
-    margin: 0;
-    padding: 8px 12px;
+    padding: 9px 11px;
+    margin: 5px 0;
     font-size: 11px;
-    min-width: 100px;
-    flex-shrink: 0;
     min-height: 38px;
   }
 
   .pdf-section {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding-top: 12px;
-    margin-top: 12px;
   }
 
   .pdf-section h3 {
@@ -617,25 +597,15 @@ textarea::placeholder {
     margin-bottom: 8px;
   }
 
-  .file-input {
-    font-size: 11px;
-    min-height: 40px;
-    padding: 6px;
-  }
-
   .pdf-item {
-    padding: 6px 8px;
-    margin: 3px 0;
+    padding: 7px 9px;
+    margin: 4px 0;
     font-size: 10px;
     min-height: 36px;
   }
 
-  .main-content {
-    height: calc(100vh - 35vh);
-  }
-
   .chat-header {
-    padding: 12px 16px;
+    padding: 14px 18px;
   }
 
   .chat-header p {
@@ -644,92 +614,122 @@ textarea::placeholder {
   }
 
   .chat-box {
-    padding: 12px 16px;
+    padding: 12px 18px;
     gap: 6px;
   }
 
   .message-content {
-    max-width: 88%;
-    padding: 8px 12px;
-    font-size: 13px;
+    max-width: 85%;
+    padding: 8px 11px;
+    font-size: 12px;
   }
 
   .input-container {
-    padding: 10px 16px 14px 16px;
+    padding: 10px 18px 14px 18px;
   }
 
   .input-box {
-    padding: 6px 10px;
-    gap: 8px;
-    min-height: 44px;
+    padding: 6px 9px;
+    gap: 7px;
+    min-height: 42px;
   }
 
   textarea {
-    font-size: 13px;
-    min-height: 32px;
+    font-size: 12px;
+    min-height: 30px;
     padding: 4px 3px;
   }
 
   .send-btn {
-    padding: 6px 14px;
-    font-size: 12px;
-    min-height: 36px;
-  }
-
-  .app-footer {
-    right: 16px;
-    bottom: 10px;
-    font-size: 10px;
+    padding: 6px 13px;
+    font-size: 11px;
+    min-height: 34px;
+    min-width: 60px;
   }
 
   .welcome-section h2 {
     font-size: 22px;
-    margin-bottom: 10px;
   }
 
   .welcome-section p {
     font-size: 12px;
   }
+
+  .app-footer {
+    right: 18px;
+    bottom: 10px;
+    font-size: 10px;
+  }
 }
 
-/* Small phones (480px - 600px) */
+/* Small phones (480px - 600px) - KEEP SIDEBAR ON LEFT */
 @media (max-width: 600px) {
   .sidebar {
-    max-height: 30vh;
-    padding: 10px 12px;
+    width: 180px;
+    padding: 12px;
   }
 
   .sidebar-header {
-    margin-right: 12px;
-    padding-right: 12px;
-    min-width: 100px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
   }
 
   .sidebar-header h1 {
-    font-size: 14px;
+    font-size: 15px;
+    margin-bottom: 1px;
   }
 
   .sidebar-header p {
     font-size: 8px;
   }
 
+  .new-chat-btn {
+    padding: 9px 10px;
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
   .chat-history {
-    gap: 6px;
+    margin-bottom: 12px;
   }
 
   .chat-item {
-    padding: 6px 10px;
+    padding: 8px 10px;
+    margin: 4px 0;
     font-size: 10px;
-    min-width: 90px;
     min-height: 36px;
   }
 
-  .main-content {
-    height: calc(100vh - 30vh);
+  .pdf-section {
+    padding-top: 10px;
+  }
+
+  .pdf-section h3 {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+
+  .upload-pdf-btn {
+    padding: 7px 9px;
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .file-input {
+    padding: 6px;
+    font-size: 10px;
+    min-height: 38px;
+  }
+
+  .pdf-item {
+    padding: 6px 8px;
+    margin: 3px 0;
+    font-size: 9px;
+    min-height: 34px;
   }
 
   .chat-header {
-    padding: 10px 14px;
+    padding: 12px 16px;
   }
 
   .chat-header p {
@@ -737,17 +737,17 @@ textarea::placeholder {
   }
 
   .chat-box {
-    padding: 10px 14px;
+    padding: 10px 16px;
   }
 
   .message-content {
-    max-width: 90%;
+    max-width: 88%;
     padding: 7px 10px;
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .input-container {
-    padding: 8px 12px 12px 12px;
+    padding: 8px 16px 12px 16px;
   }
 
   .input-box {
@@ -755,21 +755,15 @@ textarea::placeholder {
   }
 
   textarea {
-    font-size: 12px;
-    min-height: 30px;
+    font-size: 11px;
+    min-height: 28px;
   }
 
   .send-btn {
-    padding: 5px 12px;
-    font-size: 11px;
-    min-height: 34px;
-    min-width: 60px;
-  }
-
-  .app-footer {
-    right: 12px;
-    bottom: 8px;
-    font-size: 9px;
+    padding: 5px 11px;
+    font-size: 10px;
+    min-height: 32px;
+    min-width: 55px;
   }
 
   .welcome-section h2 {
@@ -779,88 +773,116 @@ textarea::placeholder {
   .welcome-section p {
     font-size: 11px;
   }
+
+  .app-footer {
+    right: 16px;
+    bottom: 8px;
+    font-size: 9px;
+  }
 }
 
-/* Extra small phones (320px - 480px) */
+/* Extra small phones (320px - 480px) - KEEP SIDEBAR ON LEFT */
 @media (max-width: 480px) {
   .sidebar {
-    max-height: 28vh;
-    padding: 8px 10px;
+    width: 150px;
+    padding: 10px;
   }
 
   .sidebar-header {
-    margin-right: 10px;
-    padding-right: 10px;
-    min-width: 80px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
   }
 
   .sidebar-header h1 {
-    font-size: 12px;
-    margin-bottom: 1px;
+    font-size: 13px;
+    margin-bottom: 0;
   }
 
   .sidebar-header p {
     font-size: 7px;
   }
 
+  .new-chat-btn {
+    padding: 8px 9px;
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+
   .chat-history {
-    gap: 4px;
+    margin-bottom: 10px;
   }
 
   .chat-item {
-    padding: 5px 8px;
+    padding: 7px 9px;
+    margin: 3px 0;
     font-size: 9px;
-    min-width: 80px;
     min-height: 34px;
   }
 
-  .main-content {
-    height: calc(100vh - 28vh);
+  .pdf-section {
+    padding-top: 8px;
+  }
+
+  .pdf-section h3 {
+    font-size: 9px;
+    margin-bottom: 6px;
+  }
+
+  .upload-pdf-btn {
+    padding: 6px 8px;
+    font-size: 9px;
+    margin-bottom: 5px;
+  }
+
+  .file-input {
+    padding: 5px;
+    font-size: 9px;
+    min-height: 36px;
+  }
+
+  .pdf-item {
+    padding: 5px 7px;
+    margin: 2px 0;
+    font-size: 8px;
+    min-height: 32px;
   }
 
   .chat-header {
-    padding: 8px 12px;
+    padding: 10px 14px;
   }
 
   .chat-header p {
     font-size: 10px;
-    margin: 1px 0;
   }
 
   .chat-box {
-    padding: 8px 12px;
+    padding: 8px 14px;
   }
 
   .message-content {
-    max-width: 92%;
-    padding: 6px 8px;
-    font-size: 11px;
+    max-width: 90%;
+    padding: 6px 9px;
+    font-size: 10px;
   }
 
   .input-container {
-    padding: 6px 10px 10px 10px;
+    padding: 6px 14px 10px 14px;
   }
 
   .input-box {
-    padding: 4px 6px;
+    padding: 4px 7px;
   }
 
   textarea {
-    font-size: 11px;
-    min-height: 28px;
+    font-size: 10px;
+    min-height: 26px;
   }
 
   .send-btn {
-    padding: 4px 10px;
-    font-size: 10px;
-    min-height: 32px;
-    min-width: 55px;
-  }
-
-  .app-footer {
-    right: 10px;
-    bottom: 6px;
-    font-size: 8px;
+    padding: 4px 9px;
+    font-size: 9px;
+    min-height: 30px;
+    min-width: 50px;
   }
 
   .welcome-section h2 {
@@ -870,12 +892,18 @@ textarea::placeholder {
   .welcome-section p {
     font-size: 10px;
   }
+
+  .app-footer {
+    right: 14px;
+    bottom: 6px;
+    font-size: 8px;
+  }
 }
 
 /* Landscape orientation */
 @media (max-height: 600px) and (max-width: 900px) {
   .sidebar {
-    max-height: 70px;
+    width: 200px;
     padding: 8px;
   }
 
@@ -901,7 +929,7 @@ textarea::placeholder {
   }
 
   textarea {
-    min-height: 28px;
+    min-height: 26px;
     font-size: 11px;
   }
 }
